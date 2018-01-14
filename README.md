@@ -23,6 +23,7 @@ Continuum's Anaconda distribution is recommended.
 $ cd osm-router
 $ export PYTHONPATH=$PYTHONPATH:$(pwd)
 $ pip install -r requirements.txt
+$ chmod +x run.sh
 ```
 
 ### Execution
