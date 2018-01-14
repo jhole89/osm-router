@@ -1,0 +1,26 @@
+language: python
+
+python:
+  - "3.6"
+  - "nightly"
+
+env:
+  - PYTHONPATH=$PYTHONPATH:$(pwd)
+
+install:
+  - pip install -r requirements.txt
+  - pip install pycodestyle
+
+script:
+  - pycodestyle . --max-line-length=119
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - python: "nightly"
+
+notifications:
+  email: false
+
+after_success:
+  - codecov
